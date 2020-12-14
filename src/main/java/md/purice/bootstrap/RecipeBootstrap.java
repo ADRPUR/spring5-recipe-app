@@ -126,7 +126,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
                 "To extend a limited supply of avocados, add either sour cream or cottage cheese to your guacamole dip. Purists may be horrified, but so what? It tastes great.\n" +
                 "\n" +
                 "\n" +
-                "Read more: http://www.simplyrecipes.com/recipes/perfect_guacamole/#ixzz4jvoun5ws");
+                "Read more: http://www.simplyrecipes.com/recipes/perfect_guacamole");
 
         guacRecipe.setNotes(guacNotes);
 
@@ -142,6 +142,10 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         guacRecipe.getCategories().add(americanCategory);
         guacRecipe.getCategories().add(mexicanCategory);
+
+        guacRecipe.setUrl("http://www.simplyrecipes.com/recipes/perfect_guacamole");
+        guacRecipe.setServings(4);
+        guacRecipe.setSource("Simply Recipes");
 
         //add to return list
         recipes.add(guacRecipe);
@@ -174,7 +178,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
                 "Grill the chicken, then let it rest while you warm the tortillas. Now you are ready to assemble the tacos and dig in. The whole meal comes together in about 30 minutes!\n" +
                 "\n" +
                 "\n" +
-                "Read more: http://www.simplyrecipes.com/recipes/spicy_grilled_chicken_tacos/#ixzz4jvu7Q0MJ");
+                "Read more: http://www.simplyrecipes.com/recipes/spicy_grilled_chicken_tacos");
 
         tacosRecipe.setNotes(tacoNotes);
 
@@ -200,6 +204,10 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         tacosRecipe.getCategories().add(americanCategory);
         tacosRecipe.getCategories().add(mexicanCategory);
+
+        tacosRecipe.setUrl("http://www.simplyrecipes.com/recipes/spicy_grilled_chicken_tacos");
+        tacosRecipe.setServings(5);
+        tacosRecipe.setSource("Simply Recipes");
 
         recipes.add(tacosRecipe);
         return recipes;
