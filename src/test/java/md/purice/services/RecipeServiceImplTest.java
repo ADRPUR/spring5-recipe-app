@@ -1,5 +1,7 @@
 package md.purice.services;
 
+import md.purice.converters.RecipeCommandToRecipe;
+import md.purice.converters.RecipeToRecipeCommand;
 import md.purice.domain.Recipe;
 import md.purice.repositories.RecipeRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,18 +17,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.util.AssertionErrors.assertNotNull;
 
-class RecipeServiceImplTest {
+public class RecipeServiceImplTest {
 
     RecipeServiceImpl recipeService;
 
     @Mock
     RecipeRepository recipeRepository;
 
+    @Mock
+    RecipeToRecipeCommand recipeToRecipeCommand;
+
+    @Mock
+    RecipeCommandToRecipe recipeCommandToRecipe;
+
     @BeforeEach
     public void setUp() throws Exception {
-        MockitoAnnotations.openMocks(this);
+        MockitoAnnotations.initMocks(this);
 
-        recipeService = new RecipeServiceImpl(recipeRepository);
+        recipeService = new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
     }
 
     @Test

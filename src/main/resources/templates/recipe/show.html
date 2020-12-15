@@ -70,7 +70,8 @@
                                 <h5>URL:</h5>
                             </div>
                             <div class="col-md-3">
-                                <p th:text="${recipe.url}">http://www.example.com</p>
+                                <a th:href="${recipe.url}" th:text="'recipe link'"
+                                   target="_blank" rel="noopener noreferrer">http://www.example.com</a>
                             </div>
                         </div>
                     </div>
