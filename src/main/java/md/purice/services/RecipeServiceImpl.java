@@ -5,6 +5,7 @@ import md.purice.commands.RecipeCommand;
 import md.purice.converters.RecipeCommandToRecipe;
 import md.purice.converters.RecipeToRecipeCommand;
 import md.purice.domain.Recipe;
+import md.purice.exceptions.NotFoundException;
 import md.purice.repositories.RecipeRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,7 +43,8 @@ public class RecipeServiceImpl implements RecipeService {
         Optional<Recipe> recipeOptional = recipeRepository.findById(l);
 
         if (!recipeOptional.isPresent()) {
-            throw new RuntimeException("Recipe Not Found!");
+            //throw new RuntimeException("Recipe Not Found!");
+            throw new NotFoundException("Recipe Not Found");
         }
 
         return recipeOptional.get();
