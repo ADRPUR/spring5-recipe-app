@@ -5,7 +5,7 @@ import md.purice.converters.RecipeCommandToRecipe;
 import md.purice.converters.RecipeToRecipeCommand;
 import md.purice.domain.Recipe;
 import md.purice.repositories.RecipeRepository;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
